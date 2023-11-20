@@ -1,0 +1,175 @@
+<!--
+    I certify that the HTML file I am submitting is all my own work.
+    None of it is copied from any source or any person.
+    Signed: Wyatt Fredrickson. Dated: 11/09/2023
+-->
+<!--
+    Author: Wyatt Fredrickson
+    Date: 11/09/2023
+    Class: CSC135
+    Project: Assignment 2
+    Description: Tuscan Style Form
+-->
+
+<!DOCTYPE html> <!--HTML-->
+<html lang="en"> <!--English-->
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tuscan Treasures Form</title> <!--Main Title of the Form.-->
+  <style>
+
+    /*General body styling setup*/
+    body {
+        margin: 0;
+        padding: 0;
+        background-image: url('https://wallpapers.com/images/hd/sunny-day-in-tuscany-italy-r11dzcjpz4nxdbq7.jpg'); 
+        background-size: cover;
+        background-position: center;
+        font-family: Arial, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+        height: 100vh; 
+    }
+
+    /*We style the container setup*/
+    .form-container {
+        max-width: 600px; 
+        margin: 50px auto; 
+        background-color: rgba(255, 255, 255, 1.0); /*Setting neutral background color*/
+        padding: 20px; 
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /*Title styling setup*/
+    h1 {
+        text-align: center;
+        margin-bottom: 20px; /*Add marging in for spacing*/
+        background-color: #4CAF50; /*Background color is set accordingly to color code*/
+        color: white; /*Setting txt color for the title*/
+        padding: 10px; /*Added padding for better visual appeal!*/
+    }
+
+    /*Form styling setup */
+    form {
+        margin-top: 20px;
+    }    
+
+    /*Fieldset styling setup*/
+    fieldset {
+        border: 2px solid #ccc; /*Setting border color for the fieldset*/
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    /*Label styling setup*/
+    label {
+        display: block;
+        margin-bottom: 8px;
+        color: #555; /*Setting text color for labels*/
+    }
+
+    /*Input and selecting styling setup*/
+    input, select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+    }
+
+    /*Radio group styling setup*/
+    .radio-group {
+        display: flex;
+        gap: 10px; /*Adjusting the gap between radio buttons and labels*/
+    }
+
+    /*Button styling setup*/
+    input[type="submit"], input[type="reset"] {
+        background-color: #4CAF50; /*Setting to green background color for the buttons*/
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    /* Button hover styling setup*/
+    input[type="submit"]:hover, input[type="reset"]:hover {
+        background-color: #45a049; /*Darker green on hover*/
+    }
+    </style>
+</head>
+<body>
+    
+    <div class="form-container">
+        <h1>Tuscan Treasures Form</h1>
+
+        <!-- Section 1 Form-->
+        <form action=" /submit" method="post"> <!--We are setting up a form-->
+            <fieldset>
+                <legend>Contact Information</legend>
+
+                <label for="firstName">First Name:</label>  <!--First name input-->
+                <input type="text" id="firstName" name="firstName" required>
+
+                <label for="lastName">Last Name:</label> <!--Last name input-->
+                <input type="text" id="lastName" name="lastName" required>
+
+                <label for="email">Email:</label> <!--Email input-->
+                <input type="email" id="email" name="email" required>
+            </fieldset>
+
+            <!--Section 2 Form-->
+            <fieldset>
+                <legend>Preferences</legend>
+
+                <label>Select your favorite cuisine:</label> <!--Drop down menu for selecting your favorite food!-->
+                <select id="cuisine" name="cuisine">
+                    <option value="italian">Italian</option>
+                    <option value="mediterranean">Mediterranean</option>
+                    <option value="Tuscan">Tuscan</option>
+                </select>
+
+                <!--We wrap each radio button and label in a div here-->
+                <fieldset class="radio-group">
+                    <legend>How did you hear about us?</legend>
+
+                    <div class="radio-option"> <!--Option added for "online" with a circle style check box-->
+                       <input type="radio" id="heardOnline" name="heard" value="online">
+                       <label for="heardOnline" style="background-color: #3498db; color: white; padding: 5px;">Online</label>
+                    </div>
+
+                    <div class="radio-option"> <!--Option added for "Friend" with a circle style check box-->
+                       <input type="radio" id="heardFriend" name="heard" value="friend">
+                       <label for="heardFriend" style="background-color: #3498db; color: white; padding: 5px;">Friend</label>
+                    </div>
+
+                    <div class="radio-option"> <!--Option added for "Facebook" with a circle style check box-->
+                        <input type="radio" id="heardFacebook" name="heard" value="facebook">
+                        <label for="heardFacebook" style="background-color: #3498db; color: white; padding: 5px;">Facebook</label>
+                    </div>
+
+                    <div class="radio-option"> <!--Option added for "LinkIn" with a circle style check box-->
+                        <input type="radio" id="heardLinkIn" name="heard" value="linkedin">
+                        <label for="heardLinkIn" style="background-color: #3498db; color: white; padding: 5px;">LinkedIn</label>
+                    </div>
+                </fieldset>
+
+                <div class="checkbox-group"> <!--Option added for "subscribing to our newsletter with a square style check box-->
+                    <label for="subscribe">Subscribe to our newsletter</label>
+                    <input type="checkbox" id="subscribe" name="subscribe" value="yes">
+                </div>
+                </fieldset>
+
+            <!--Submit and reset Buttons-->
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </form>
+    </div>
+
+</body>
+</html>
